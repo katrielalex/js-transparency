@@ -1,0 +1,6 @@
+localhost:8000
+
+# Require SRI for scripts and stylesheets
+header / {
+  Content-Security-Policy "require-sri-for script; script-src {scheme}://{host}"
+}

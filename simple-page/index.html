@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <script src="dynamic-without-integrity.js" type="text/javascript"></script>
+    <script src="dynamic-with-integrity.js" crossorigin="anonymous" integrity="sha384-l5GYDlUuyTMLQw3ipxX9oTC6YVepBmswZCltzoQU4iGGuYHAYw8hMEVekjwnU98A"></script>
+ </head>
+  <body onload="document.getElementById('inline-script').innerHTML='Successfully loaded'">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+   </nav>
+    <main role="main">
+      <section class="jumbotron">
+        <h1 class="display-4">Hello there!</h1>
+        <p class="lead">You need to enable SRI: paste "chrome://flags/#enable-experimental-web-platform-features" into Chrome</p>
+        <p>Use <code>openssl dgst -sha384 -binary dynamic-with-integrity.js  | openssl base64 -A | pbcopy</code> to generate the hash</p>
+        <p><span id="dynamic-without-integrity-loading">Loading</span> dynamic-without-integrity.js</p>
+        <p><span id="inline-script">Loading</span> inline scripts</p>
+        <p><span id="dynamic-with-integrity-loading">Loading</span> dynamic-with-integrity.js</p>
+        <p><a class="btn btn-primary btn-lg" href="#" onclick="alert('This should not run')">Learn more</a></p>
+      </section>
+    </main>
+ </body>
+</html>
